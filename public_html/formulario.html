@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this template
+-->
+<html>
+    <head>
+        <title >Practica 2</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="estilos.css" rel="stylesheet" type="text/css"/>
+    </head>
+    <body>
+        <header>
+            <h1 id="titulo">Videojuegos de Segunda Mano</h1>
+            <img src="img/Plantilla 1.jpg" alt="Imagen Logo" width="100" height="100"/>
+        </header>
+        <nav>
+            
+        </nav>
+
+        <section id="contenido">
+            <h2>Formulario</h2>
+            <form id="formulario" name="formulario" method="POST" onsubmit="return validar();" novalidate>
+                <div id="msgForm"></div>
+                <label for="correo" class="etiqueta">Correo electrónico: </label>
+                <input type="email" id="correo" name="correo" size="20"/> <span id="spanCorreo" class="spanrequerido">*</span> <br /><br />
+                <label for="contraseña" class="etiqueta">Contraseña: </label>
+                <input type="password" name="contraseña" id="contraseña" size="40" placeholder="minimo 6 caracteres y al menos 1 numero" title="minimo 6 caracteres y al menos 1 numero"/> <span id="spanContraseña" class="spanrequerido">*</span> <br /><br/>
+                <label for="rcontraseña" class="etiqueta">Repetir Contraseña: </label>
+                <input type="password" name="rcontraseña" id="rcontraseña" size="20"/> <span id="spanContraseña2" class="spanrequerido">*</span> <br /><br/>
+                <label for="nombre" class="etiqueta">Nombre: </label>
+                <input type="text" name="nombre" id="nombre" required size="20"/> <span id="spanNombre" class="spanrequerido">*</span> <br /><br/>
+                <label for="direccion" class="etiqueta">Direccion: </label>
+                <input type="text" name="direccion" id ="direccion" size="20"/><br /><br/>
+                <label for="cpostal" class="etiqueta">Código postal: </label>
+                <input type="text" name="cpostal" id="cpostal" pattern="[0-9]{2}.[0-9]{3}"/><br /><br/>
+                <label for="provincia" class="etiqueta">Provincia: </label>
+                <select name="provincia" id="provincia">
+                    <option value="-1">"Elige provincia"</option>
+                </select>
+                <br/><br/>
+                <label for="facebook" class="etiqueta">Facebook: </label>
+                <input type="url" name="facebook" id="facebook" size="20"/><br/><br/>
+                <label for="telefono" class="etiqueta">Teléfono de contacto: </label>
+                <input type="text" name="telefono" id="telefono" pattern="[0-9]{3}.[0-9]{3}.[0-9]{3}" size="20"/>
+                <p class="etiqueta"> Categoría: </p>
+                <input type="checkbox" name="camisetas" id="camisetas"/>
+                <label for="camisetas" class="opcion">PC</label> <br/>
+                <input type="checkbox" name="pantalones" id="pantalones"/>
+                <label for="pantalones" class="opcion">Play Station 4</label> <br/>
+                <input type="checkbox" name="sudaderas" id="sudaderas"/>
+                <label for="sudaderas" class="opcion">XBox One</label> <br/>
+                <input type="checkbox" name="accesorios" id="accesorios"/>
+                <label for="accesorios" class="opcion">Otros</label> <br/>
+                
+                <p class="etiqueta">Cómo conociste esta página?</p>
+                <input type="radio" name="buscador" id="buscador"/>
+                <label for="buscador" class="opcion">Buscador</label> <br/>
+                <input type="radio" name="amigo" id="amigo"/>
+                <label for="amigo" class="opcion">Amigo</label> <br/>
+                <input type="radio" name="radio" id="radio"/>
+                <label for="radio" class="opcion">Radio</label> <br/>
+                <input type="radio" name="television" id="television"/>
+                <label for="television" class="opcion">Television</label> <br/>
+                <input type="radio" name="prensa" id="prensa"/>
+                <label for="prensa" class="opcion">Prensa</label> <br/><br/>
+
+                <button type="submit" >Enviar</button>
+            </form>
+        </section>
+        <hr/>
+        <footer id="footer">Carlos Camacho&copy; 2022</footer>
+        <script src="codex.js"></script>
+    </body>
+</html>
