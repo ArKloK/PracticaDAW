@@ -1,41 +1,49 @@
 let menu = [{name: "Inicio", url: "index.html", options: []},
-    {name: "Categoria", url: "categorias.html", options: [{name: "PC", url: "", options: []},
+    {name: "Articulos", url: "articulos.html", options: [{name: "PC", url: "", options: []},
             {name: "PS4", url: "", options: []},
             {name: "Xbox One", url: "", options: []},
             {name: "Otros", url: "", options: []}]},
-    {name: "Articulos", url: "articulos.html", options: []},
-    {name: "Formulario", url: "formulario.html", options: []}
+    {name: "Publicar", url: "formulario.html", options: []}
 ];
-let menuHTML = '<ul class="menu">';
+let menuHTML = '<div class="container-fluid"> ';
+menuHTML += '<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu" aria-controls="menu" aria-expanded="false"> ';
+menuHTML += '<span class="navbar-toggler-icon"></span>';
+menuHTML += '</button>';
+
+menuHTML += '<div class="collapse navbar-collapse justify-content-center" id="menu">';
+menuHTML += '<ul class="navbar-nav">';
 
 for (let i in menu) {
-    menuHTML += "<li><a href='" + menu[i].url + "'>" + menu[i].name + "</a>";
-    for (let j in menu[i].options) {
-        if (j == 0) {
-            menuHTML += "<ul>";
-        }
-        menuHTML += "<li><a href='" + menu[i].options[j].url + "'>" + menu[i].options[j].name + "</a>";
-        for (let k in menu[i].options[j].options) {
-            if (k == 0) {
-                menuHTML += "<ul>";
+    if (menu[i].options.length > 0) {
+        menuHTML += "<li class = 'nav-item dropdown'>";
+        for (let j in menu[i].options) {
+            if (j == 0) {
+                menuHTML += "<a href='#' class='nav-link dropdown-toggle text-dark' id='menuproductos' role='button' data-bs-toggle='dropdown' aria-expanded='false'>" + menu[i].name + "</a>";
+                menuHTML += '<ul class="dropdown-menu" aria-labelledby="menuproductos">';
             }
-            menuHTML += "<li><a>" + menu[i].options[j].options[k] + "</a></li>";
-            if (k == menu[i].options[j].options.length - 1) {
+
+            menuHTML += "<li><a href='#' class='dropdown-item'>" + menu[i].options[j].name+ "</a></li>";
+
+            if (j == menu[i].options.length - 1) {
                 menuHTML += "</ul>";
+                menuHTML += "</li>";
             }
         }
-        menuHTML += "</li>";
-        if (j == menu[i].options.length - 1) {
-            menuHTML += "</ul>";
-        }
-
-    }
-    menuHTML += "</li>";
+    } else {
+        menuHTML += "<li class='nav-item'><a class='nav-link text-dark' href='" + menu[i].url + "'> " + menu[i].name + "</li>";
+    }    
 }
-menuHTML += "</ul>";
-let nav = document.getElementsByTagName("nav")[0];
+menuHTML += '</ul>';
+menuHTML += '</div>';
+menuHTML += '<form class="d-flex">';
+menuHTML += '<a href="#" class="text-decoration-none text-dark">Iniciar Sesion</a>';
+menuHTML += '<span>&nbsp;|&nbsp;</span>';
+menuHTML += '<a href="#" class="text-decoration-none text-dark">Registro</a>';
+menuHTML += '<img src="img/icono login.png" width="40" alt="error al cargar la imagen"/>';
+menuHTML += '</form>';
+menuHTML += '</div>';
+let nav = document.getElementById("navmenu");
 nav.innerHTML = menuHTML;
-
 
 let prov = document.getElementById("provincia");
 
@@ -111,7 +119,7 @@ function validar() {
         ok = false;
         spanContraseña2.innerHTML = "Las contraseñas no coinciden";
     }
-    
+
     if (/^(?=.*[0-9]).{6}$/.test(f.contraseña.value) === false) {
         spanContraseña.innerHTML = "Formato de contraseña incorrecto";
     }
@@ -138,4 +146,5 @@ function validar() {
     }
 
     return ok;
-};
+}
+;
