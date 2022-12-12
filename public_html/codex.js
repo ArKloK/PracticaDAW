@@ -10,15 +10,19 @@ menuHTML += '<button class="navbar-toggler" type="button" data-bs-toggle="collap
 menuHTML += '<span class="navbar-toggler-icon"></span>';
 menuHTML += '</button>';
 
-menuHTML += '<div class="collapse navbar-collapse justify-content-center" id="menu">';
+menuHTML += '<div class="collapse navbar-collapse" id="menu">';
 menuHTML += '<ul class="navbar-nav">';
+menuHTML += '<li class="navbar-nav">';
+menuHTML += '<a href="index.html">'
+menuHTML += '<img src="img/Plantilla 1.png" alt="Imagen Logo" width="40"/>'
+menuHTML += '</a></li>';
 
 for (let i in menu) {
     if (menu[i].options.length > 0) {
         menuHTML += "<li class = 'nav-item dropdown'>";
         for (let j in menu[i].options) {
             if (j == 0) {
-                menuHTML += "<a href='#' class='nav-link dropdown-toggle text-dark' id='menuproductos' role='button' data-bs-toggle='dropdown' aria-expanded='false'>" + menu[i].name + "</a>";
+                menuHTML += "<a href='#' class='nav-link dropdown-toggle text-dark  me-5 ms-5' id='menuproductos' role='button' data-bs-toggle='dropdown' aria-expanded='false'>" + menu[i].name + "</a>";
                 menuHTML += '<ul class="dropdown-menu" aria-labelledby="menuproductos">';
             }
 
@@ -30,7 +34,7 @@ for (let i in menu) {
             }
         }
     } else {
-        menuHTML += "<li class='nav-item'><a class='nav-link text-dark' href='" + menu[i].url + "'> " + menu[i].name + "</li>";
+        menuHTML += "<li class='nav-item me-5 ms-5'><a class='nav-link text-dark' href='" + menu[i].url + "'> " + menu[i].name + "</li>";
     }    
 }
 menuHTML += '</ul>';
