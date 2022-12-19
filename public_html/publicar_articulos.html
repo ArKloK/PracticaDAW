@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this template
+-->
+<html>
+    <head>
+        <title >Practica 2</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="estilos.css" rel="stylesheet" type="text/css"/>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    </head>
+    <body>
+        <header class="d-flex justify-content-center">
+            <h1 class="text-center text-uppercase" style="color:#EEEEEE;" id="titulo">Videojuegos de Segunda Mano</h1>
+            <a href="index.html">
+                <img src="img/Plantilla 1.png" alt="Imagen Logo" width="100" height="100"/>
+
+            </a>
+        </header>
+        <nav class="navbar navbar-light bg-gradient navbar-expand-lg" style="background-color: #8EC8DB;" id="navmenu">
+
+        </nav>
+
+        <section id="contenido">
+            <div class="d-flex justify-content-center">
+                <form action="#">
+                    <div class="mb-3">
+                        <label class="form-label" for="nombrearticulo">Nombre</label>
+                        <div class="row">
+                            <div class="col-11">
+                                <input class="form-control" id="nombrearticulo">
+                            </div>
+                            <span class="col" style="color: red; font-size: 60">*</span>
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <label class="form-label" for="precioarticulo">Precio</label>
+                        <div class="col-6">
+                            <div class="input-group">
+                                <input class="form-control col-2" id="precioarticulo" aria-describedby="basic-addon1">
+                                <span class="input-group-text" id="basic-addon1">€</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="form-label">Antigüedad (en años)</label>
+                        <div class="row">
+                            <input type="range" value="1" class="form-range col" min="0" max="30" oninput="this.nextElementSibling.value = this.value">
+                            <output class="col-1">1</output>
+                        </div>
+                    </div>
+
+                    <div class="row mb-3">
+                        <div class="col">
+                            <label class="form-label">Categoría</label>
+                            <div class="col">
+                                <select class="form-select" id="categoriaarticulo">
+                                    <option value="first">PC</option>
+                                    <option value="second">PS4</option>
+                                    <option value="third">Xbox One</option>
+                                    <option value="fourth">Otros</option>
+                                </select>    
+                            </div>
+                        </div>
+
+                        <div class="col">
+                            <label class="form-label">Estado</label>
+                            <div class="col">
+                                <select class="form-select" id="estadoarticulo">
+                                    <option value="first">Nuevo</option>
+                                    <option value="second">SemiNuevo</option>
+                                    <option value="third">Deteriorado</option>
+                                    <option value="fourth">Antiguo</option>
+                                </select>    
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="formFile" class="form-label">Imagen</label>
+                        <input class="form-control" type="file" id="formFile">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="exampleFormControlTextarea1" class="form-label">Descripción</label>
+                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                    </div>
+                </form>
+            </div>
+
+        </section>
+        <hr/>
+        <footer id="footer">Carlos Camacho&copy; 2022</footer>
+        <script src="codex.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    </body>
+</html>
