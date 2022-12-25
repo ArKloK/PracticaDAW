@@ -3,7 +3,7 @@ let menu = [{name: "Inicio", url: "index.html", options: []},
             {name: "PS4", url: "", options: []},
             {name: "Xbox One", url: "", options: []},
             {name: "Otros", url: "", options: []}]},
-    {name: "Publicar", url: "formulario.html", options: []}
+    {name: "Publicar", url: "publicar_articulos.html", options: []}
 ];
 let menuHTML = '<div class="container-fluid"> ';
 menuHTML += '<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu" aria-controls="menu" aria-expanded="false"> ';
@@ -39,12 +39,12 @@ for (let i in menu) {
 }
 menuHTML += '</ul>';
 menuHTML += '</div>';
-menuHTML += '<form class="d-flex">';
+menuHTML += '<div class="d-flex justify-content-right">';
 menuHTML += '<a href="#" class="text-decoration-none text-dark">Iniciar Sesion</a>';
 menuHTML += '<span>&nbsp;|&nbsp;</span>';
 menuHTML += '<a href="#" class="text-decoration-none text-dark">Registro</a>';
 menuHTML += '<img src="img/icono login.png" width="40" alt="error al cargar la imagen"/>';
-menuHTML += '</form>';
+menuHTML += '</div>';
 menuHTML += '</div>';
 let nav = document.getElementById("navmenu");
 nav.innerHTML = menuHTML;
